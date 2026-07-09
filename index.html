@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seso India X — Telegram</title>
+<style>
+  :root{
+    --bg-1:#0b1020;
+    --bg-2:#101a33;
+    --tg:#2aabee;
+    --tg-deep:#229ed9;
+    --ink:#eaf2fb;
+    --muted:#8fa3bf;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+    background:radial-gradient(1200px 800px at 70% -10%, var(--bg-2), var(--bg-1) 60%);
+    color:var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+  }
+  /* floating paper planes */
+  .plane{
+    position:fixed;
+    opacity:.12;
+    animation:fly 14s linear infinite;
+    pointer-events:none;
+  }
+  .plane svg{width:38px;height:38px;fill:var(--tg)}
+  .plane:nth-child(1){top:15%;animation-delay:0s}
+  .plane:nth-child(2){top:45%;animation-delay:4s}
+  .plane:nth-child(3){top:75%;animation-delay:8s}
+  @keyframes fly{
+    from{transform:translateX(-10vw) rotate(8deg)}
+    to{transform:translateX(110vw) rotate(8deg)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .plane{animation:none;display:none}
+    .btn::after{animation:none}
+  }
+
+  .card{
+    text-align:center;
+    padding:48px 28px;
+    max-width:420px;
+    width:92%;
+  }
+  .logo{
+    width:88px;height:88px;
+    margin:0 auto 24px;
+    border-radius:50%;
+    background:linear-gradient(145deg,var(--tg),var(--tg-deep));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 0 60px rgba(42,171,238,.35);
+  }
+  .logo svg{width:46px;height:46px;fill:#fff;transform:translateX(-2px)}
+  h1{
+    font-size:1.7rem;
+    font-weight:700;
+    letter-spacing:.02em;
+    margin-bottom:10px;
+  }
+  p{
+    color:var(--muted);
+    font-size:.98rem;
+    line-height:1.5;
+    margin-bottom:34px;
+  }
+  .btn{
+    position:relative;
+    display:inline-flex;align-items:center;gap:12px;
+    background:linear-gradient(145deg,var(--tg),var(--tg-deep));
+    color:#fff;text-decoration:none;
+    font-size:1.05rem;font-weight:600;
+    padding:16px 34px;border-radius:999px;
+    box-shadow:0 8px 30px rgba(42,171,238,.35);
+    transition:transform .15s ease, box-shadow .15s ease;
+    overflow:hidden;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(42,171,238,.5)}
+  .btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+  .btn svg{width:22px;height:22px;fill:#fff}
+  /* shine sweep */
+  .btn::after{
+    content:"";
+    position:absolute;top:0;left:-70%;
+    width:40%;height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);
+    animation:shine 3.2s ease-in-out infinite;
+  }
+  @keyframes shine{
+    0%{left:-70%} 55%{left:130%} 100%{left:130%}
+  }
+  .handle{
+    margin-top:22px;
+    font-size:.85rem;
+    color:var(--muted);
+    letter-spacing:.06em;
+  }
+</style>
+</head>
+<body>
+
+  <div class="plane"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg></div>
+  <div class="plane"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg></div>
+  <div class="plane"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg></div>
+
+  <main class="card">
+    <div class="logo">
+      <svg viewBox="0 0 24 24"><path d="M9.04 16.32l-.38 5.35c.54 0 .78-.23 1.06-.51l2.55-2.44 5.28 3.87c.97.53 1.66.25 1.92-.9L22.9 4.63c.31-1.42-.52-1.98-1.46-1.63L2.4 10.34c-1.39.54-1.37 1.31-.24 1.66l4.87 1.52 11.3-7.12c.53-.35 1.02-.16.62.19L9.04 16.32z"/></svg>
+    </div>
+    <h1>Seso India X</h1>
+    <p>Humse seedha Telegram par judiye — ek click mein DM kholiye.</p>
+    <a class="btn" href="https://t.me/sesoindiaX" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M9.04 16.32l-.38 5.35c.54 0 .78-.23 1.06-.51l2.55-2.44 5.28 3.87c.97.53 1.66.25 1.92-.9L22.9 4.63c.31-1.42-.52-1.98-1.46-1.63L2.4 10.34c-1.39.54-1.37 1.31-.24 1.66l4.87 1.52 11.3-7.12c.53-.35 1.02-.16.62.19L9.04 16.32z"/></svg>
+      Telegram par DM karein
+    </a>
+    <div class="handle">@sesoindiaX</div>
+  </main>
+
+</body>
+</html>
